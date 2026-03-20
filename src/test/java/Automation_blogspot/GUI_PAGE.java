@@ -6,13 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class GUI_PAGE {
+public class GUI_PAGE 
+{
 	WebDriver driver;
 
-	public void page_starts(WebDriver d) {
-		driver = d;
+	public GUI_PAGE(WebDriver d) 
+	{
+		this.driver = d;
+		
 	}
-
 	// Locators
 	By name = By.id("name");
 	By email = By.id("email");
@@ -97,6 +99,10 @@ public class GUI_PAGE {
 	    public void clickSubmit() {
 	        driver.findElement(submitbtn).click();
 	    }
+
+		
+			
+		
 	
 }
 	
