@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -75,19 +76,25 @@ public class GUI_Element
 		driver.findElement(By.className("ui-datepicker-year")).click();
 
 		// Select year from dropdown list
-		driver.findElement(By.xpath("//select[@class='ui-datepicker-year']/option[text()='2012']")).click();
+		//driver.findElement(By.xpath("//select[@class='ui-datepicker-year']/option[text()='2012']")).click();
 
 		// Select Date
 		driver.findElement(By.xpath("//a[text()='16']")).click();
 		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.getElementById('start-date').value='2025-03-20'");
+        
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+		js1.executeScript("document.getElementById('end-date').value='2026-03-30'");
 		
+		driver.findElement(By.className("submit-btn")).click();
 		
 		
 		
 				
 		
 		
-	Thread.sleep(5000);
+	Thread.sleep(15000);
 
 
 		
